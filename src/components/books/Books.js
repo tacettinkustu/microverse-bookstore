@@ -3,18 +3,30 @@ import Book from './Book';
 const books = [
   {
     genre: 'Action',
-    title: 'The Girl',
-    author: 'xxxxxxxx',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    progress: {
+      currentChapter: '17',
+      completed: '64',
+    },
   },
   {
     genre: 'Science Fiction',
-    title: 'yyyyy',
-    author: 'zzzzzz',
+    title: 'Dune',
+    author: 'Frank Herbert',
+    progress: {
+      currentChapter: '3',
+      completed: '8',
+    },
   },
   {
     genre: 'Economy',
-    title: 'aaaaa',
-    author: 'bbbbbb',
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    progress: {
+      currentChapter: '0',
+      completed: '0',
+    },
   },
 ];
 
@@ -25,5 +37,4 @@ const Books = () => (
     ))}
   </ul>
 );
-
 export default Books;
