@@ -6,9 +6,11 @@ const Nav = ({ title, routes }) => (
     <Link to="/">{title}</Link>
     <ul>
       {routes.map(({ name, path }) => (
-        <NavLink key={path} exact to={path}>
-          {name}
-        </NavLink>
+        <li key={path}>
+          <NavLink exact to={path}>
+            {name}
+          </NavLink>
+        </li>
       ))}
     </ul>
   </nav>
@@ -20,8 +22,7 @@ Nav.propTypes = {
     PropTypes.shape({
       path: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
 };
-
 export default Nav;

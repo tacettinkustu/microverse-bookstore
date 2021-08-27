@@ -8,23 +8,6 @@ const Actions = () => (
     <button type="button">Edit</button>
   </div>
 );
-
-const Progress = ({ progress }) => {
-  const { completed, currentChapter } = progress;
-  return (
-    <div>
-      <div>
-        <p>{`${completed}%`}</p>
-        <p>Completed</p>
-      </div>
-      <div>
-        <p>CURRENT CHAPTER</p>
-        <p>{currentChapter}</p>
-      </div>
-    </div>
-  );
-};
-
 const Book = ({ book }) => {
   const { title, category, author, progress } = book;
   return (
@@ -41,21 +24,13 @@ const Book = ({ book }) => {
     </div>
   );
 };
-Progress.propTypes = {
-  progress: PropTypes.shape({
-    currentChapter: PropTypes.string.isRequired,
-    completed: PropTypes.string.isRequired,
-  }).isRequired,
-};
 Book.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    progress: PropTypes.shape({
-      currentChapter: PropTypes.string.isRequired,
-      completed: PropTypes.string.isRequired,
-    }).isRequired,
+    progress: Progress.propTypes.progress,
   }).isRequired,
 };
+
 export default Book;
