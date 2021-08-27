@@ -10,7 +10,9 @@ const Actions = () => (
 );
 
 const Book = ({ book }) => {
-  const { title, category, author, progress } = book;
+  const {
+    title, category, author, progress,
+  } = book;
 
   return (
     <div>

@@ -22,7 +22,7 @@ Nav.propTypes = {
     PropTypes.shape({
       path: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 export default Nav;
