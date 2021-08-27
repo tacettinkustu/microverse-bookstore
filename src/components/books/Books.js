@@ -1,35 +1,35 @@
 import Book from './Book';
-
 const books = [
   {
-    genre: 'Action',
+    category: 'Action',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
     progress: {
-      currentChapter: '17',
+      currentChapter: 'Chapter 17',
       completed: '64',
     },
   },
+
   {
-    genre: 'Science Fiction',
+    category: 'Science Fiction',
     title: 'Dune',
     author: 'Frank Herbert',
     progress: {
-      currentChapter: '3',
+      currentChapter: 'Chapter 3: "A Lesson Learned"',
       completed: '8',
     },
   },
+
   {
-    genre: 'Economy',
+    category: 'Economy',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
     progress: {
-      currentChapter: '0',
+      currentChapter: 'Introduction',
       completed: '0',
     },
   },
 ];
-
 const Books = () => (
   <ul>
     {books.map((book) => (
