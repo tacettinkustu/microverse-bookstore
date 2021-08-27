@@ -15,18 +15,16 @@ const routes = [
     component: <Categories />,
   },
 ];
-
 const App = () => (
   <Router>
     <Nav title="Bookstore CMS" routes={routes} />
     <Switch>
       {routes.map(({ path, component }) => (
-        <Route exact key={path}>
+        <Route path={path} exact key={path}>
           {component}
         </Route>
       ))}
     </Switch>
   </Router>
 );
-
 export default App;
