@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Progress from './Progress';
+import Progress from './BookProgress';
 
 const Actions = () => (
   <div>
@@ -8,8 +8,10 @@ const Actions = () => (
     <button type="button">Edit</button>
   </div>
 );
+
 const Book = ({ book }) => {
   const { title, category, author, progress } = book;
+
   return (
     <div>
       <div>
@@ -24,6 +26,7 @@ const Book = ({ book }) => {
     </div>
   );
 };
+
 Book.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
