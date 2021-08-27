@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import Progress from './Progress';
+
 const Actions = () => (
   <div>
     <button type="button">Comments</button>
