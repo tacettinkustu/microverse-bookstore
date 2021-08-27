@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../../redux/books/books';
 
-const AddBook = ({ categories = [] }) => {
+const categories = ['Action', 'Science Fiction', 'Economy'];
+
+const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState(categories[0]);
-
   const handleTitle = (event) => setTitle(event.target.value);
   const handleCategory = (event) => setCategory(event.target.value);
   const handleSubmit = (event) => {
@@ -22,7 +22,6 @@ const AddBook = ({ categories = [] }) => {
     setCategory(categories[0]);
     event.preventDefault();
   };
-
   return (
     <section>
       <h2>ADD NEW BOOK</h2>
@@ -46,7 +45,4 @@ const AddBook = ({ categories = [] }) => {
   );
 };
 
-AddBook.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 export default AddBook;
