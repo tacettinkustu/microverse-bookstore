@@ -1,6 +1,5 @@
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-
 const initialState = [
   {
     id: '1',
@@ -33,7 +32,6 @@ const initialState = [
     },
   },
 ];
-
 export const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
@@ -45,7 +43,17 @@ export const removeBook = (id) => ({
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return [
+        ...state,
+        {
+          ...action.payload,
+          author: 'Author not set',
+          progress: {
+            currentChapter: 'Introduction',
+            completed: '0',
+          },
+        },
+      ];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     default:

@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books/books';
 
-const ActionButtons = ({ id }) => {
+const ActionButtons = () => {
   const dispatch = useDispatch();
 
-  const handleRemove = () => dispatch(removeBook(id));
+  const handleRemove = () => dispatch(removeBook());
 
   return (
     <div>
@@ -16,10 +15,6 @@ const ActionButtons = ({ id }) => {
       <button type="button">Edit</button>
     </div>
   );
-};
-
-ActionButtons.propTypes = {
-  id: PropTypes.string.isRequired,
 };
 
 export default ActionButtons;
