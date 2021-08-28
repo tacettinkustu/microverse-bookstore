@@ -10,9 +10,7 @@ const ActionButtons = ({ id }) => {
   return (
     <div>
       <button type="button">Comments</button>
-      <button type="button" onClick={handleRemove}>
-        Remove
-      </button>
+      <button type="button" onClick={handleRemove}>Remove</button>
       <button type="button">Edit</button>
     </div>
   );
