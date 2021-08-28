@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import BookProgress from './BookProgress';
+import Progress from './BookProgress';
 import ActionButtons from './ActionButtons';
 
 const Book = ({ book }) => {
   const {
-    title, category, progress,
+    item_id: id, title, category, author, progress,
   } = book;
 
   return (
@@ -13,21 +13,23 @@ const Book = ({ book }) => {
         <div>
           <h4>{category}</h4>
           <h2>{title}</h2>
+          <h6>{author}</h6>
         </div>
-        <BookProgress progress={progress} />
+        <Progress progress={progress} />
       </div>
-      <ActionButtons />
+      <ActionButtons id={id} />
     </div>
   );
 };
 
 Book.propTypes = {
   book: PropTypes.shape({
-    // id: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    // author: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    progress: BookProgress.propTypes.progress,
+
+    progress: Progress.propTypes.progress,
   }).isRequired,
 };
 export default Book;

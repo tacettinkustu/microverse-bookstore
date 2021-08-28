@@ -1,24 +1,34 @@
-import { createBook } from '../../api';
+import * as API from '../../api';
 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
 const initialState = [];
 
+API.createApp();
+
 const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,
 });
 
-export const removeBook = (id) => ({
+const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
 
-export const postBook = (book) => async (dispatch) => {
-  const isCreated = createBook(book);
+export const createBook = (book) => async (dispatch) => {
+  const isCreated = await API.createBook(book);
   if (isCreated) {
     dispatch(addBook(book));
+  }
+};
+
+export const deleteBook = (id) => async (dispatch) => {
+  const isDeleted = await API.deleteBook(id);
+
+  if (isDeleted) {
+    dispatch(removeBook(id));
   }
 };
 

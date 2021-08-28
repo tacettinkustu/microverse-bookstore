@@ -2,21 +2,22 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { postBook } from '../../redux/books/books';
+import { createBook } from '../../redux/books/books';
 
 const AddBook = ({ categories = [] }) => {
   const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState(categories[0]);
   const handleTitle = (event) => setTitle(event.target.value);
   const handleCategory = (event) => setCategory(event.target.value);
   const handleSubmit = (event) => {
     const book = {
-      id: nanoid(),
+      item_id: nanoid(),
       title,
       category,
     };
-    dispatch(postBook(book));
+    dispatch(createBook(book));
     setTitle('');
     setCategory(categories[0]);
     event.preventDefault();
