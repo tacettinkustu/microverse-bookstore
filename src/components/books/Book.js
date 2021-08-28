@@ -4,7 +4,9 @@ import ActionButtons from './ActionButtons';
 import './Books.css';
 
 const Book = ({ book }) => {
-  const { item_id: id, title, category, author, progress } = book;
+  const {
+    item_id: id, title, category, author, progress,
+  } = book;
 
   return (
     <div className="book">
