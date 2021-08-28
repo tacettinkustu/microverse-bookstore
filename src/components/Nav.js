@@ -1,21 +1,31 @@
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
+import IconButton from './IconButton';
 import './Nav.css';
 
 const Nav = ({ title, routes }) => (
   <nav className="nav-bar">
-    <Link to="/">{title}</Link>
+    <Link className="nav-brand" to="/">
+      {title}
+    </Link>
     <ul className="nav-links">
       {routes.map(({ name, path }) => (
         <li key={path}>
-          <NavLink exact to={path}>
+          <NavLink
+            className="nav-link"
+            activeClassName="active-link"
+            exact
+            to={path}
+          >
             {name}
           </NavLink>
         </li>
       ))}
     </ul>
+    <IconButton name="person" />
   </nav>
 );
+
 Nav.propTypes = {
   title: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(
